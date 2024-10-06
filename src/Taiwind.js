@@ -45,7 +45,6 @@ function ColorPicker() {
           className="absolute inset-0 m-6 rounded-lg"
           style={{ 
             background: selectedGradient,
-            backgroundSize: '150% 150%', /* Larger background size */
             borderRadius: "48%", 
             padding: "5%", 
             marginLeft: "22%", 
@@ -56,7 +55,7 @@ function ColorPicker() {
             <img
               src={src}
               alt="Sample"
-              className="w-20 h-20 object-cover rounded-full sm:w-24 sm:h-24 lg:w-28 lg:h-28" /* Reduced image size */
+              className="w-24 h-24 object-cover rounded-full sm:w-28 sm:h-28 lg:w-36 lg:h-36"
             />
           </div>
         </div>
