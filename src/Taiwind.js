@@ -15,10 +15,10 @@ const gradients = [
   'linear-gradient(to right, #3357FF, #FF0F0F)',
   'linear-gradient(to right, #FF0, #00FF9F)',
   'linear-gradient(to right, #FFB6C1, #FF69B4)',
-   'linear-gradient(to right, #009E49, #2A7F62)',
-   'linear-gradient(to right, #2BC0E4, #EAECC6)',
-   'linear-gradient(to right, #FFB300, #FF8C00)',
-   'linear-gradient(to right, #FF6F61, #DE8B7F)',
+  'linear-gradient(to right, #009E49, #2A7F62)',
+  'linear-gradient(to right, #2BC0E4, #EAECC6)',
+  'linear-gradient(to right, #FFB300, #FF8C00)',
+  'linear-gradient(to right, #FF6F61, #DE8B7F)',
   'linear-gradient(to right, #FF9F00, #00FF7F)'
 ];
 
@@ -43,17 +43,28 @@ function ColorPicker() {
       <div className="relative w-[60%] h-[60%] max-w-4xl max-h-4xl bg-gray-300 rounded-lg">
         <div
           className="absolute inset-0 m-10 rounded-lg"
-          style={{ background: selectedGradient,borderRadius:"48%", backgroundSize: '10% 18%',paddingTop:"10px",paddingBottom:"4%",paddingLeft:"9%", marginLeft:"22%",marginRight:"22%"}}
+          style={{ 
+            background: selectedGradient, 
+            borderRadius: "48%", 
+            backgroundSize: '10% 18%', 
+            paddingTop: "10px", 
+            paddingBottom: "4%", 
+            paddingLeft: "9%", 
+            marginLeft: "22%", 
+            marginRight: "22%" 
+          }}
         >
           <div className="flex items-center justify-center w-full h-full">
             <img
               src={src}
               alt="Sample"
-              className="w-30 h-25 object-cover rounded-full"
+              className="w-[70%] h-auto object-cover rounded-full sm:w-[50%] md:w-[40%] lg:w-[30%]" // Adjusting the size responsively
+              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>
       </div>
+
       <div className="grid grid-cols-3 gap-4 mt-6">
         {gradients.map((gradient, index) => (
           <div
@@ -64,14 +75,15 @@ function ColorPicker() {
           />
         ))}
       </div>
+
       <div className="bg-black text-white mt-4 flex space-x-4">
         <button
           onClick={handleReset}
           className="bg-black text-white px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-transform"
         >
-          Reset 
+          Reset
         </button>
-        <button 
+        <button
           onClick={handleRandomGradient}
           className="bg-black text-white px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-800"
         >
