@@ -15,10 +15,10 @@ const gradients = [
   'linear-gradient(to right, #3357FF, #FF0F0F)',
   'linear-gradient(to right, #FF0, #00FF9F)',
   'linear-gradient(to right, #FFB6C1, #FF69B4)',
-   'linear-gradient(to right, #009E49, #2A7F62)',
-   'linear-gradient(to right, #2BC0E4, #EAECC6)',
-   'linear-gradient(to right, #FFB300, #FF8C00)',
-   'linear-gradient(to right, #FF6F61, #DE8B7F)',
+  'linear-gradient(to right, #009E49, #2A7F62)',
+  'linear-gradient(to right, #2BC0E4, #EAECC6)',
+  'linear-gradient(to right, #FFB300, #FF8C00)',
+  'linear-gradient(to right, #FF6F61, #DE8B7F)',
   'linear-gradient(to right, #FF9F00, #00FF7F)'
 ];
 
@@ -39,41 +39,47 @@ function ColorPicker() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 p-6">
-      <div className="relative w-[60%] h-[60%] max-w-4xl max-h-4xl bg-gray-300 rounded-lg">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-6">
+      <div className="relative w-full max-w-xl h-auto bg-gray-300 rounded-lg p-4 sm:w-[80%] sm:h-[50%] lg:w-[60%] lg:h-[60%]">
         <div
-          className="absolute inset-0 m-10 rounded-lg"
-          style={{ background: selectedGradient,borderRadius:"48%", backgroundSize: '10% 18%',paddingTop:"10px",paddingBottom:"4%",paddingLeft:"9%", marginLeft:"22%",marginRight:"22%"}}
+          className="absolute inset-0 m-6 rounded-lg"
+          style={{ 
+            background: selectedGradient,
+            borderRadius: "48%", 
+            padding: "5%", 
+            marginLeft: "22%", 
+            marginRight: "22%" 
+          }}
         >
           <div className="flex items-center justify-center w-full h-full">
             <img
               src={src}
               alt="Sample"
-              className="w-30 h-25 object-cover rounded-full"
+              className="w-24 h-24 object-cover rounded-full sm:w-28 sm:h-28 lg:w-36 lg:h-36"
             />
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 mt-6">
+      <div className="grid grid-cols-3 gap-4 mt-6 sm:grid-cols-4 lg:grid-cols-5">
         {gradients.map((gradient, index) => (
           <div
             key={index}
             onClick={() => handleGradientClick(gradient)}
-            className={`w-16 h-16 rounded-lg cursor-pointer transition-transform transform ${gradient === selectedGradient ? 'scale-110' : 'scale-100'}`}
+            className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg cursor-pointer transition-transform transform ${gradient === selectedGradient ? 'scale-110' : 'scale-100'}`}
             style={{ background: gradient }}
           />
         ))}
       </div>
-      <div className="bg-black text-white mt-4 flex space-x-4">
+      <div className="bg-black text-white mt-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
         <button
           onClick={handleReset}
-          className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-transform"
+          className="bg-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-transform"
         >
           Reset 
         </button>
         <button 
           onClick={handleRandomGradient}
-          className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-800"
+          className="bg-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800"
         >
           Generate
         </button>
