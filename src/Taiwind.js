@@ -67,13 +67,13 @@ function ColorPicker() {
       <div className="bg-black text-white mt-4 flex space-x-4">
         <button
           onClick={handleReset}
-          className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-transform"
+          className="bg-black text-white px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-transform"
         >
           Reset 
         </button>
         <button 
           onClick={handleRandomGradient}
-          className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-800"
+          className="bg-black text-white px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-800"
         >
           Generate
         </button>
